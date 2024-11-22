@@ -1,0 +1,1 @@
+image retrieved from https://www.nydi.org/images/logos/
