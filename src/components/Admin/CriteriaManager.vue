@@ -30,7 +30,7 @@
             <label>Name:</label>
             <input v-model="formData.name" required>
           </div>
-          
+
           <div class="form-group">
             <label>Description:</label>
             <textarea v-model="formData.description" required></textarea>
@@ -41,7 +41,7 @@
               <label>Min Score:</label>
               <input type="number" v-model.number="formData.minScore" required>
             </div>
-            
+
             <div class="form-group">
               <label>Max Score:</label>
               <input type="number" v-model.number="formData.maxScore" required>
@@ -130,6 +130,13 @@ export default {
 </script>
 
 <style scoped>
+label {
+  text-align: left;
+}
+.criterion-details p {
+  text-align: left;
+}
+
 .criteria-manager {
   max-width: 1200px;
   margin: 0 auto;
@@ -140,7 +147,7 @@ export default {
   padding: 20px;
   margin-bottom: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .criterion-header {
@@ -161,7 +168,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,7 +196,8 @@ label {
   margin-bottom: 5px;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 8px;
   border: 1px solid #ddd;

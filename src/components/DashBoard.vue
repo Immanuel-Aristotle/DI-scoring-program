@@ -106,18 +106,28 @@ export default {
 }
 </script>
 <style scoped>
+.dashboard-sidebar {
+  position: fixed;  /* This fixes the sidebar */
+  top: 80px;          /* Align to top */
+  left: 0;         /* Align to left */
+  height: 100vh;   /* Full viewport height */
+  width: 250px;    /* Or whatever width you prefer */
+  overflow-y: auto; /* Allows scrolling if sidebar content is too long */
+  background-color: #f5f5f5; /* Or your preferred background */
+}
+
+/* Add padding to your main content to prevent overlap */
+.dashboard-main {
+  margin-left: 250px; /* Should match sidebar width */
+  padding: 20px;
+  width: 100%;
+}
+
+/* Make sure the container has a proper layout */
 .dashboard-container {
   display: flex;
   min-height: 100vh;
 }
-
-.dashboard-sidebar {
-  width: 250px;
-  background-color: #2c3e50;
-  color: white;
-  padding: 20px;
-}
-
 .nav-title {
   font-size: 1.5rem;
   margin-bottom: 30px;
@@ -126,6 +136,7 @@ export default {
 }
 
 .nav-items li {
+  text-align: left;
   padding: 12px 15px;
   margin: 5px 0;
   cursor: pointer;
@@ -141,10 +152,6 @@ export default {
   background-color: #3498db;
 }
 
-.dashboard-main {
-  flex: 1;
-  background-color: #f5f6fa;
-}
 
 .dashboard-header {
   display: flex;
@@ -158,6 +165,7 @@ export default {
 .header-user {
   display: flex;
   align-items: center;
+  padding-left: 20%;
   gap: 15px;
 }
 

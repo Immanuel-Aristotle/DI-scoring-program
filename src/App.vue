@@ -40,11 +40,11 @@ export default {
 
 <style>
 .logo-hint {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   position: fixed;
   /* top: 80px;  Adjust based on your logo size */
   left: 20px;
-  font-size: 12px;
+  font-size: 13px;
   color: #666;
   opacity: 0;
   transition: opacity 0.1s ease;
