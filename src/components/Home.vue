@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style scoped>
-
+p.heading {
+  color: #1453AD;
+}
 /* Style as needed */
 </style>

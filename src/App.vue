@@ -42,12 +42,12 @@ export default {
 .logo-hint {
   font-family: Arial, Helvetica, sans-serif;
   position: fixed;
-  top: 80px;  /* Adjust based on your logo size */
+  /* top: 80px;  Adjust based on your logo size */
   left: 20px;
   font-size: 12px;
   color: #666;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.1s ease;
   z-index: 999;
 }
 
