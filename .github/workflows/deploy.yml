@@ -37,6 +37,9 @@ jobs:
       - name: Compiles and minifies for production
         run: npm run build
 
+      - name: Compiles and hot-reloads for development
+        run: npm run serve
+        
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
