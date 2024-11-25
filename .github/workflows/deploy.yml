@@ -14,29 +14,34 @@ permissions:
   contents: write
   pages: write
   id-token: write
-  
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout the code
-      uses: actions/checkout@v3
+      - name: Checkout the code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18' # Use the Node.js version specified in your project
-        cache: 'npm'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Use the Node.js version specified in your project
+          cache: 'npm'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build the project
-      run: npm run build
+      - name: Build the project
+        run: |
+          npm run build
+          rm -rf docs
+          cp -r dist docs
+          sed -i -e 's/src=\\//src=/g' docs/index.html
+          sed -i -e 's/href=\\//href=/g' docs/index.html
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist # Adjust if your build outputs to a different directory
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs # Adjust this if your build output directory is different
