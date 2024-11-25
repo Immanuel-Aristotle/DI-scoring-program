@@ -2,7 +2,7 @@
   <div class="criteria-manager">
     <!-- Criteria List -->
     <div class="criteria-list">
-      <h3>Current Scoring Criteria</h3>
+      <h2>Current Scoring Criteria</h2>
       <div v-for="criterion in criteria" :key="criterion.id" class="criterion-item">
         <div class="criterion-header">
           <h4>{{ criterion.name }}</h4>
@@ -12,7 +12,8 @@
           </div>
         </div>
         <div class="criterion-details">
-          <p>Scale: {{ criterion.minScore }} - {{ criterion.maxScore }}</p>
+          <!-- This one is a dash not minus -->
+          <p>Scale: {{ criterion.minScore }} - {{ criterion.maxScore }}</p> 
           <p>Weight: {{ criterion.weight }}%</p>
           <p>Description: {{ criterion.description }}</p>
         </div>
@@ -39,12 +40,12 @@
           <div class="form-row">
             <div class="form-group">
               <label>Min Score:</label>
-              <input type="number" v-model.number="formData.minScore" required>
+              <input type="number" v-model.number="formData.minScore" required min="0">
             </div>
 
             <div class="form-group">
               <label>Max Score:</label>
-              <input type="number" v-model.number="formData.maxScore" required>
+              <input type="number" v-model.number="formData.maxScore" required min="0">
             </div>
           </div>
 
@@ -69,14 +70,14 @@ export default {
   data() {
     return {
       criteria: [
-        {
-          id: 1,
-          name: 'Technical Innovation',
-          description: 'Evaluation of technical innovation and creativity',
-          minScore: 0,
-          maxScore: 30,
-          weight: 25
-        },
+        // {
+        //   id: 1,
+        //   name: 'Technical Innovation',
+        //   description: 'Evaluation of technical innovation and creativity',
+        //   minScore: 0,
+        //   maxScore: 30,
+        //   weight: 25
+        // },
         // Add more sample criteria
       ],
       showAddForm: false,
@@ -229,6 +230,7 @@ button {
 }
 
 .btn-add {
+  font-size: larger;
   background-color: #2ecc71;
   color: white;
 }

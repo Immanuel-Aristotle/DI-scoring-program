@@ -3,7 +3,7 @@
     <!-- Sidebar Navigation -->
     <aside class="dashboard-sidebar">
       <nav>
-        <h2 class="nav-title">Admin Dashboard</h2>
+        <h1 class="nav-title">Admin Dashboard</h1>
         <ul class="nav-items">
           <li @click="currentView = 'criteria'" :class="{ active: currentView === 'criteria' }">
             Scoring Criteria
@@ -40,10 +40,7 @@
       <!-- Dynamic Content Area -->
       <div class="dashboard-content">
         <!-- Placeholder content until we add the components -->
-        <component 
-          v-if="currentComponent" 
-          :is="currentComponent"
-        ></component>
+        <component v-if="currentComponent" :is="currentComponent"></component>
         <p>Content for {{ viewTitle }} will be added soon.</p>
       </div>
     </main>
@@ -107,18 +104,26 @@ export default {
 </script>
 <style scoped>
 .dashboard-sidebar {
-  position: fixed;  /* This fixes the sidebar */
-  top: 80px;          /* Align to top */
-  left: 0;         /* Align to left */
-  height: 100vh;   /* Full viewport height */
-  width: 250px;    /* Or whatever width you prefer */
-  overflow-y: auto; /* Allows scrolling if sidebar content is too long */
-  background-color: #f5f5f5; /* Or your preferred background */
+  position: fixed;
+  /* This fixes the sidebar */
+  top: 80px;
+  /* Align to top */
+  left: 0;
+  /* Align to left */
+  height: 100vh;
+  /* Full viewport height */
+  width: 250px;
+  /* Or whatever width you prefer */
+  overflow-y: auto;
+  /* Allows scrolling if sidebar content is too long */
+  background-color: #f5f5f5;
+  /* Or your preferred background */
 }
 
 /* Add padding to your main content to prevent overlap */
 .dashboard-main {
-  margin-left: 250px; /* Should match sidebar width */
+  margin-left: 250px;
+  /* Should match sidebar width */
   padding: 20px;
   width: 100%;
 }
@@ -128,6 +133,7 @@ export default {
   display: flex;
   min-height: 100vh;
 }
+
 .nav-title {
   font-size: 1.5rem;
   margin-bottom: 30px;
@@ -136,20 +142,24 @@ export default {
 }
 
 .nav-items li {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: left;
   padding: 12px 15px;
   margin: 5px 0;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;
+  list-style-type: square;
 }
 
+
 .nav-items li:hover {
-  background-color: #34495e;
+  background-color: #1453ad;
+  text-decoration: underline;
 }
 
 .nav-items li.active {
-  background-color: #3498db;
+  background-color: #04b4ff;
 }
 
 
@@ -159,7 +169,7 @@ export default {
   align-items: center;
   padding: 20px;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-user {
@@ -181,4 +191,5 @@ export default {
 .dashboard-content {
   padding: 20px;
 }
+
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div class="logo-container">
-      <img :class="{ 'logo-minimized': !isHomePage }" src="./assets/DI-logo-full.svg" @error="$event.target.src = './assets/DI-logo-full.png'" class="logo"
-        @click="goHome">
+      <img :class="{ 'logo-minimized': !isHomePage }" src="./assets/DI-logo-full.svg"
+        @error="$event.target.src = './assets/DI-logo-full.png'" class="logo" @click="goHome">
       <div v-if="!isHomePage" class="logo-hint">
         Click the logo to return home
       </div>
