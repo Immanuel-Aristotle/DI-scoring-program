@@ -1,7 +1,6 @@
 const { defineConfig } = require("@vue/cli-service");
-module.exports = {
+
+module.exports = defineConfig({
   publicPath:
-    process.env.NODE_ENV === "production"
-      ? "/DI-scoring-program/"
-      : "/"
-};
+    process.env.NODE_ENV === "production" ? "/DI-scoring-program/" : "/",
+});
